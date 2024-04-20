@@ -33,6 +33,13 @@ impl Distribution<Card> for Standard {
 
 fn main() {
 
+    let some_var = Card {
+        suit: Suit::Clubs,
+        rank: 5,
+    };
+
+    println!("Suit: {:?}\nRank: {}", some_var.suit, some_var.rank);
+
     let mut rng = rand::thread_rng();
     let hand: Vec<Card> = (0..5).map(|_| rng.gen()).collect();
     println!("Your hand: {:?}", hand);

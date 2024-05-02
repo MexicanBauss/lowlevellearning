@@ -1,5 +1,7 @@
 # Low Level Learning
 
+- [ ] Build to-do-list system capable of adding, removing and keeping the current state of the list.
+- [ ] Build a simple blog app for creating, editing, and saving blog entries.
 - [ ] Create a weather application that fetches data from a weather API and displays current weather conditions and forecasts for a given location.
 - [ ] Develop a file encryption/decryption tool to secure sensitive files using cryptographic algorithms like AES.
 - [ ] Implement a chat application with features like sending messages, creating chat rooms, and supporting multiple users concurrently.

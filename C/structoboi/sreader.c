@@ -38,7 +38,7 @@ int main() {
     if (num_students > 0) {
         avg_age /= num_students;
         printf("Average age of students: %.2f\n", avg_age);
-    }
+    };
 
     char name[MAX_NAME_LENGTH];
 
@@ -46,7 +46,7 @@ int main() {
     while (fgets(name, MAX_NAME_LENGTH, stdin) != NULL && strncmp(name, "DONE", 4) != 0) {
         int matching_students = 0;
         for (int i = 0; i < num_students; i++) {
-            if (strcasecmp(stdnts[i].name, name) == 0) {
+            if (strncasecmp(stdnts[i].name, name, strlen(name)-1) == 0) {
                 printf("Student: %s; Class year: %d; Age: %d\n", stdnts[i].name, stdnts[i].class_year, stdnts[i].age);
                 matching_students++;
             }

@@ -1,10 +1,18 @@
 #[derive(Debug)]
-struct Rectangle {
-    width: u32,
-    height: u32
+pub struct Rectangle {
+    width: i32,
+    height: i32,
 }
-impl Rectangle {
-    fn area(&self) -> u32 {
+
+pub trait Area {
+    fn area(&self) -> i32;
+    fn width(&self) -> bool;
+    fn can_hold(&self, other: &Rectangle) -> bool;
+    fn square(size: i32) -> Self;
+}
+
+impl Area for Rectangle {
+    fn area(&self) -> i32 {
         self.height * self.width
     }
     fn width(&self) -> bool {
@@ -13,7 +21,7 @@ impl Rectangle {
     fn can_hold(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.height > other.height
     }
-    fn square(size: u32) -> Self {
+    fn square(size: i32) -> Self {
         Self {
             width: size,
             height: size

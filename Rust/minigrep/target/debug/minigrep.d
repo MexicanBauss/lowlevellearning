@@ -1,1 +1,0 @@
-/home/ecantos/Documents/lowlevellearning/Rust/minigrep/target/debug/minigrep: /home/ecantos/Documents/lowlevellearning/Rust/minigrep/src/lib.rs /home/ecantos/Documents/lowlevellearning/Rust/minigrep/src/main.rs

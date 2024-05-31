@@ -1,7 +1,7 @@
 use std::{f64::consts::PI, time::Duration};
 use termion::terminal_size;
 
-const THETA: f64 = 0.07;
+const THETA: f64 = 0.08;
 const PHI: f64 = 0.02;
 
 const R1: f64 = 1.0;
@@ -13,6 +13,7 @@ fn calculate_k1(screen_width: f64) -> f64 {
 }
 
 fn render_frame(a: f64, b: f64) {
+
     let (width, height) = terminal_size().unwrap();
     let screen_width = width as f64 * (1.0/3.0);
     let screen_height = width as f64 * (1.0/3.0);
@@ -59,14 +60,14 @@ fn render_frame(a: f64, b: f64) {
         theta += THETA;
     }
 
-    // Now, dump output_buffer to the screen.
-    // Bring cursor to "home" location.
-    print!("\x1b[H");
+    println!("\x1b[H");
+    // print!("{}", termion::clear::All);
     for row in output_buffer {
         let row_string: String = row.into_iter().collect();
         println!("{}", row_string);
     }
 }
+
 
 fn main() {
     let (mut a, mut b) = (0.0, 0.0);
@@ -74,6 +75,6 @@ fn main() {
         render_frame(a, b);
         a+=0.01;
         b+=0.01;
-        std::thread::sleep(Duration::from_micros(900));
+        std::thread::sleep(Duration::from_micros(500));
     }
 }

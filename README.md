@@ -1,5 +1,6 @@
 # Low Level Learning
 
+- [X] Build Donut 🍩
 - [ ] Build to-do-list system capable of adding, removing and keeping the current state of the list.
 - [ ] Build a simple blog app for creating, editing, and saving blog entries.
 - [ ] Create a weather application that fetches data from a weather API and displays current weather conditions and forecasts for a given location.

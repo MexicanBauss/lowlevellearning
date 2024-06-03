@@ -1,1 +1,1 @@
-/home/ecantos/Documents/lowlevellearning/Rust/fireplace/target/debug/fireplace: /home/ecantos/Documents/lowlevellearning/Rust/fireplace/src/main.rs
+/home/eduardo/Projects/lowlevellearning/Rust/fireplace/target/debug/fireplace: /home/eduardo/Projects/lowlevellearning/Rust/fireplace/src/main.rs

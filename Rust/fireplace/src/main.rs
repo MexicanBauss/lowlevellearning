@@ -21,7 +21,7 @@ impl CountBuffer {
         for i in 0..self.table.len() {
             for j in 0..self.table[i].len() {
                 if i as u16 == self.render_height - 1 {
-                    let random_number: u8 = rand::thread_rng().gen_range(0..=20);
+                    let random_number: u8 = rand::thread_rng().gen_range(7..=20);
                     self.table[i][j] = random_number;
                 } else {
                     let remove_num: u8 = rand::thread_rng().gen_range(0..3);
@@ -44,9 +44,10 @@ impl CountBuffer {
                     0 => ' ',
                     1 => '.',
                     2 => ':',
-                    3 => '=',
-                    4 => '%',
-                    5 => '#',
+                    3 => '|',
+                    4 => '=',
+                    5 => '%',
+                    6 => '#',
                     _ => '@',
                 };
                 row_content.push(val);
@@ -57,14 +58,38 @@ impl CountBuffer {
     }
 }
 
+/// Main function that initializes a CountBuffer with terminal size, updates its values and renders frames in a loop with a delay of 80 milliseconds.
+/// 
+/// # Examples
+/// 
+/// ```
+/// fn main() {
+///     let (width, height) = terminal_size().unwrap();
+///     let mut count_buffer = CountBuffer::new(width, height);
+/// 
+///     loop {
+///         count_buffer.update_values();
+///         count_buffer.render_frame();
+///         thread::sleep(Duration::from_millis(80));
+///     }
+/// }
+///
 fn main() {
-    let (width, height) = terminal_size().unwrap();
+    
+    let (width, height) = match terminal_size() {
+        Ok((w, h)) => (w, h),
+        Err(e) => {
+            eprintln!("Error getting terminal size: {}", e);
+            std::process::exit(1);
+        }
+    };
+
     let mut count_buffer = CountBuffer::new(width, height);
 
     loop {
         count_buffer.update_values();
         count_buffer.render_frame();
-        thread::sleep(Duration::from_millis(100));
+        thread::sleep(Duration::from_millis(80));
     }
 
 }

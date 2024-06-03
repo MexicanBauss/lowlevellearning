@@ -12,6 +12,24 @@ fn calculate_k1(screen_width: f64) -> f64 {
     screen_width * K2 * 3.0 / (8.0 * (R1 + R2))
 }
 
+/// Renders a frame of a rotating 3D donut and prints it to the terminal.
+///
+/// # Arguments
+///
+/// * `a` - The angle of rotation around the x-axis.
+/// * `b` - The angle of rotation around the z-axis.
+///
+/// # Example
+///
+/// ```rust
+/// let (mut a, mut b) = (0.0, 0.0);
+/// loop {
+///     render_frame(a, b);
+///     a += 0.01;
+///     b += 0.01;
+///     std::thread::sleep(Duration::from_micros(500));
+/// }
+/// ```
 fn render_frame(a: f64, b: f64) {
 
     let (width, height) = terminal_size().unwrap();

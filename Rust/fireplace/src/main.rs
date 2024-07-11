@@ -59,21 +59,6 @@ impl CountBuffer {
 }
 
 /// Main function that initializes a CountBuffer with terminal size, updates its values and renders frames in a loop with a delay of 80 milliseconds.
-/// 
-/// # Examples
-/// 
-/// ```
-/// fn main() {
-///     let (width, height) = terminal_size().unwrap();
-///     let mut count_buffer = CountBuffer::new(width, height);
-/// 
-///     loop {
-///         count_buffer.update_values();
-///         count_buffer.render_frame();
-///         thread::sleep(Duration::from_millis(80));
-///     }
-/// }
-///
 fn main() {
     
     let (width, height) = match terminal_size() {

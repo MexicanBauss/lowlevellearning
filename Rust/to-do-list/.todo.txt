@@ -1,4 +1,2 @@
-Workout:	false
-Spend time with kids:	false
-Find a new house:	false
-Improve the app:	false
+Run tests:	false
+Execute tests:	false
